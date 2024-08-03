@@ -1,0 +1,17 @@
+services:
+  express-openapi-backend:
+    container_name: express-openapi-backend
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
+    ports:
+      - 8000:3000
+    tty: true
+    volumes:
+      - ./backend:/app
+    networks:
+      - express-openapi-network
+
+networks:
+  express-openapi-network:
+    external: true
