@@ -1,18 +1,13 @@
-import express, { Request, Response } from 'express';
-import dotenv from 'dotenv';
+import express, { urlencoded, json } from 'express';
+import { RegisterRoutes } from "../build/routes";
 
-dotenv.config();
+export const app = express();
 
-const app = express();
+app.use(
+  urlencoded({
+    extended: true,
+  })
+);
+app.use(json());
 
-const PORT = process.env.PORT;
-
-app.get('/', (request: Request, response: Response) => {
-  response.status(200).send('Hello Typescript Express Nodemon');
-});
-
-app.listen(PORT, () => {
-  console.log('Server running at POST: ', PORT);
-}).on('error', (error) => {
-  throw new Error(error.message);
-});
+RegisterRoutes(app);
