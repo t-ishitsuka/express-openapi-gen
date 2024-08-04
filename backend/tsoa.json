@@ -1,12 +1,21 @@
 {
-  "entryFile": "src/index.ts",
+  "entryFile": "src/app.ts",
   "noImplicitAdditionalProperties": "throw-on-extras",
-  "controllerPathGlobs": ["src/**/*Controller.ts"],
+  "controllerPathGlobs": ["./src/http/controllers/api/**/*Controller.ts"],
   "spec": {
     "outputDirectory": "build",
     "specVersion": 3
   },
   "routes": {
     "routesDir": "./src/routes"
+  },
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "/*": ["*"],
+      "tsoa": ["node_modules/tsoa/dist"],
+      "tsoa/": ["node_modules/tsoa/dist/"]
+    }
   }
 }
