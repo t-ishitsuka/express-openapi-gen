@@ -37,4 +37,4 @@ COPY --chown=node:node ./backend ./
 COPY --chown=node:node ./docker/backend/entrypoint.sh /
 RUN chmod 777 /entrypoint.sh
 
-# ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
