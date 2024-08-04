@@ -1,5 +1,5 @@
 import express, { urlencoded, json } from 'express';
-import { RegisterRoutes } from "../build/routes";
+import { RegisterRoutes } from "./routes/routes";
 
 export const app = express();
 
