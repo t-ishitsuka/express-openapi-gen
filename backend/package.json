@@ -7,7 +7,7 @@
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
     "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
     "build:routes": "ts-node -r tsconfig-paths/register src/openapi/generateRoutes.ts",
-    "build:spec": "ts-node -r tsconfig-paths/register src/openapi/generateSpecJson.ts",
+    "build:spec": "ts-node -r tsconfig-paths/register src/openapi/generateSpecJson.ts && ts-node -r tsconfig-paths/register src/openapi/generateSpecYaml.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,7 +15,8 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "tsoa": "^6.4.0"
+    "tsoa": "^6.4.0",
+    "yaml": "^2.5.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",

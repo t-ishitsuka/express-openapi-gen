@@ -1,23 +1,24 @@
 import { ExtendedRoutesConfig, ExtendedSpecConfig } from 'tsoa';
 import { CompilerOptions } from 'typescript';
+import { join } from 'path';
 
 export const specOptions: ExtendedSpecConfig = {
-  entryFile: "./src/server.ts",
+  entryFile: join(__dirname, '../../src/server.ts'),
   noImplicitAdditionalProperties: 'throw-on-extras',
-  basePath: "./src",
+  basePath: join(__dirname, '../../src'),
   specVersion: 3,
-  outputDirectory: "./src/openapi/build",
-  controllerPathGlobs: ["./src/http/controllers/api/**/*Controller.ts"],
+  outputDirectory: join(__dirname, '../../src/openapi/build'),
+  controllerPathGlobs: [join(__dirname, '../../src/http/controllers/api/**/*Controller.ts')],
   specFileBaseName: 'openapi'
 };
 
 export const routeOptions: ExtendedRoutesConfig = {
-  entryFile: "./src/app.ts",
+  entryFile: join(__dirname, '../../src/server.ts'),
   noImplicitAdditionalProperties: 'throw-on-extras',
   basePath: "/api/v1",
-  routesDir: './src/routes',
+  routesDir: join(__dirname, '../../src/routes'),
   bodyCoercion: true,
-  controllerPathGlobs: ["./src/http/controllers/api/**/*Controller.ts"],
+  controllerPathGlobs: [join(__dirname, '../../src/http/controllers/api/**/*Controller.ts')],
 };
 
 export const compilerOptions: CompilerOptions = {
