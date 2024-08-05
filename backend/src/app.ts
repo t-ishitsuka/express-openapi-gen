@@ -1,5 +1,6 @@
 import express, { urlencoded, json } from 'express';
 import { RegisterRoutes } from "@/routes/routes";
+import { RegisterSpecRoutes } from './routes/spec';
 
 export const app = express();
 
@@ -10,9 +11,6 @@ app.use(
 );
 app.use(json());
 
-// TODO generate openapi yaml file
-// TODO generate openapi viewer html file
-// TODO add viewer openapi routing
 // TODO check openapi spec
 // TODO add response class
 // TODO add middleware (show req, res timestamp)
@@ -29,4 +27,5 @@ app.use(json());
 // TODO 
 // TODO 
 
+RegisterSpecRoutes(app);
 RegisterRoutes(app);
