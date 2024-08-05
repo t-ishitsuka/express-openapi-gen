@@ -3,7 +3,7 @@ import { join } from 'path';
 import { ExtendedRoutesConfig, ExtendedSpecConfig } from 'tsoa';
 import { CompilerOptions } from 'typescript';
 
-import { OPENAPI_TAGS } from './tags';
+import { OPENAPI_TAGS } from '@/openapi/tags';
 
 export const specOptions: ExtendedSpecConfig = {
   entryFile: join(__dirname, '../../src/server.ts'),
