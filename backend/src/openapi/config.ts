@@ -1,6 +1,8 @@
+import { join } from 'path';
+
 import { ExtendedRoutesConfig, ExtendedSpecConfig } from 'tsoa';
 import { CompilerOptions } from 'typescript';
-import { join } from 'path';
+
 import { OPENAPI_TAGS } from './tags';
 
 export const specOptions: ExtendedSpecConfig = {
@@ -9,26 +11,30 @@ export const specOptions: ExtendedSpecConfig = {
   basePath: join(__dirname, '../../src'),
   specVersion: 3,
   outputDirectory: join(__dirname, '../../src/openapi/build'),
-  controllerPathGlobs: [join(__dirname, '../../src/http/controllers/api/**/*Controller.ts')],
+  controllerPathGlobs: [
+    join(__dirname, '../../src/http/controllers/api/**/*Controller.ts'),
+  ],
   specFileBaseName: 'openapi',
-  tags: OPENAPI_TAGS
+  tags: OPENAPI_TAGS,
 };
 
 export const routeOptions: ExtendedRoutesConfig = {
   entryFile: join(__dirname, '../../src/server.ts'),
   noImplicitAdditionalProperties: 'throw-on-extras',
-  basePath: "/api/v1",
+  basePath: '/api/v1',
   routesDir: join(__dirname, '../../src/routes'),
   bodyCoercion: true,
-  controllerPathGlobs: [join(__dirname, '../../src/http/controllers/api/**/*Controller.ts')],
+  controllerPathGlobs: [
+    join(__dirname, '../../src/http/controllers/api/**/*Controller.ts'),
+  ],
 };
 
 export const compilerOptions: CompilerOptions = {
-  "baseUrl": "./",
-  "paths": {
-    "@/*": ["src/*"],
-    "/*": ["*"],
-    "tsoa": ["node_modules/tsoa/dist"],
-    "tsoa/": ["node_modules/tsoa/dist/"]
-  }
-}
+  baseUrl: './',
+  paths: {
+    '@/*': ['src/*'],
+    '/*': ['*'],
+    tsoa: ['node_modules/tsoa/dist'],
+    'tsoa/': ['node_modules/tsoa/dist/'],
+  },
+};

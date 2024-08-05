@@ -1,6 +1,7 @@
-import { Request, Response } from "express"
-import { join } from 'path';
 import * as fs from 'fs';
+import { join } from 'path';
+
+import { Request, Response } from 'express';
 
 export class OpenAPIController {
   public path: string;
@@ -48,7 +49,7 @@ export class OpenAPIController {
   async json(_req: Request, res: Response): Promise<Response> {
     const path = join(this.path, 'openapi.json');
 
-    console.log(path)
+    console.log(path);
 
     if (!fs.existsSync(path)) {
       // throw new NotFoundException(ErrorCode.NOT_FOUND);
