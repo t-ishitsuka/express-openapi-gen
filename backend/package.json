@@ -4,20 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "start": "ts-node -r tsconfig-paths/register src/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
+    "build:routes": "ts-node -r tsconfig-paths/register src/openapi/generateRoutes.ts",
+    "build:spec": "ts-node -r tsconfig-paths/register src/openapi/generateSpecJson.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "tsoa": "^6.4.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
-    "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4"
   }
 }
