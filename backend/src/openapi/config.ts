@@ -16,6 +16,16 @@ export const specOptions: ExtendedSpecConfig = {
   ],
   specFileBaseName: 'openapi',
   tags: OPENAPI_TAGS,
+  // OA Info
+  name: 'OpenAPI-express-gen',
+  description:
+    'tsoaを使用してOpenAPIを使用したSpec File の生成、ルーティング、可能であればバリデーションまで行う。',
+  contact: {
+    name: 'Aprire',
+    url: 'https://www.aprire-tech.com',
+    email: 'contact@aprire-tech.com',
+  },
+  version: '1.0.0',
 };
 
 export const routeOptions: ExtendedRoutesConfig = {
