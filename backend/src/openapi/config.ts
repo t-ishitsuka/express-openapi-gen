@@ -12,11 +12,12 @@ export const specOptions: ExtendedSpecConfig = {
 };
 
 export const routeOptions: ExtendedRoutesConfig = {
-  entryFile: "./src/server.ts",
+  entryFile: "./src/app.ts",
   noImplicitAdditionalProperties: 'throw-on-extras',
   basePath: "/api/v1",
   routesDir: './src/routes',
-  bodyCoercion: true
+  bodyCoercion: true,
+  controllerPathGlobs: ["./src/http/controllers/api/**/*Controller.ts"],
 };
 
 export const compilerOptions: CompilerOptions = {

@@ -52,7 +52,7 @@ export function RegisterRoutes(app: Router) {
 
 
     
-        app.get('/users/:userId',
+        app.get('/api/v1/users/:userId',
             ...(fetchMiddlewares<RequestHandler>(UsersController)),
             ...(fetchMiddlewares<RequestHandler>(UsersController.prototype.getUser)),
 
@@ -83,7 +83,7 @@ export function RegisterRoutes(app: Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        app.post('/users',
+        app.post('/api/v1/users',
             ...(fetchMiddlewares<RequestHandler>(UsersController)),
             ...(fetchMiddlewares<RequestHandler>(UsersController.prototype.createUser)),
 
@@ -113,7 +113,7 @@ export function RegisterRoutes(app: Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        app.get('/health-check',
+        app.get('/api/v1/health-check',
             ...(fetchMiddlewares<RequestHandler>(healthCheckController)),
             ...(fetchMiddlewares<RequestHandler>(healthCheckController.prototype.healthCheck)),
 
