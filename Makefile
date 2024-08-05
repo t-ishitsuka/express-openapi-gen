@@ -53,3 +53,15 @@ down:		## Docker コンテナの削除
 .PHONY: backend
 backend:	## frontend コンテナへの接続
 	docker compose exec -u 1000 express-openapi-backend bash
+
+############################################################
+#
+# Util
+#
+############################################################
+
+.PHONY: oa
+oa:	## backend OpenAPIスキーマ作成
+	docker compose exec -u 1000 express-openapi-backend bash -c 'npm run build:spec:json'
+	docker compose exec -u 1000 express-openapi-backend bash -c 'npm run build:spec:yaml'
+	docker compose exec -u 1000 express-openapi-backend bash -c 'npm run build:spec:html'

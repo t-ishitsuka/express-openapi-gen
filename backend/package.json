@@ -7,7 +7,9 @@
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
     "dev": "ts-node-dev -r tsconfig-paths/register src/server.ts",
     "build:routes": "ts-node -r tsconfig-paths/register src/openapi/generateRoutes.ts",
-    "build:spec": "ts-node -r tsconfig-paths/register src/openapi/generateSpecJson.ts && ts-node -r tsconfig-paths/register src/openapi/generateSpecYaml.ts",
+    "build:spec:json": "ts-node -r tsconfig-paths/register src/openapi/generateSpecJson.ts",
+    "build:spec:yaml": "ts-node -r tsconfig-paths/register src/openapi/generateSpecYaml.ts",
+    "build:spec:html": "npx @redocly/cli build-docs ./src/openapi/build/openapi.json -o ./src/openapi/build/openapi.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
