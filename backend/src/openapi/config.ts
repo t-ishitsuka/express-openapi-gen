@@ -1,6 +1,7 @@
 import { ExtendedRoutesConfig, ExtendedSpecConfig } from 'tsoa';
 import { CompilerOptions } from 'typescript';
 import { join } from 'path';
+import { OPENAPI_TAGS } from './tags';
 
 export const specOptions: ExtendedSpecConfig = {
   entryFile: join(__dirname, '../../src/server.ts'),
@@ -9,7 +10,8 @@ export const specOptions: ExtendedSpecConfig = {
   specVersion: 3,
   outputDirectory: join(__dirname, '../../src/openapi/build'),
   controllerPathGlobs: [join(__dirname, '../../src/http/controllers/api/**/*Controller.ts')],
-  specFileBaseName: 'openapi'
+  specFileBaseName: 'openapi',
+  tags: OPENAPI_TAGS
 };
 
 export const routeOptions: ExtendedRoutesConfig = {
