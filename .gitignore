@@ -1,7 +1,7 @@
 /backend/.env
 /backend/dist
 /backend/node_modules
-/backend/openapi/build
 
-/backend/routes/routes.ts
+/backend/src/openapi/build
+/backend/src/routes/routes.ts
 
