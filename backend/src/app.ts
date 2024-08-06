@@ -1,5 +1,7 @@
 import express, { urlencoded, json } from 'express';
 
+import { AddTimestamp } from './http/middlewares/time';
+
 import { RequestLogger } from '@/http/middlewares/logger';
 import { RegisterRoutes } from '@/routes/routes';
 import { RegisterSpecRoutes } from '@/routes/spec';
@@ -28,6 +30,7 @@ app.use(json());
 // TODO
 
 app.use(RequestLogger);
+app.use(AddTimestamp);
 
 RegisterSpecRoutes(app);
 RegisterRoutes(app);
