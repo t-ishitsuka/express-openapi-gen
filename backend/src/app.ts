@@ -12,7 +12,6 @@ app.use(
 );
 app.use(json());
 
-// TODO add response class
 // TODO add middleware (show req, res timestamp)
 // TODO add database
 // TODO add prisma setting
