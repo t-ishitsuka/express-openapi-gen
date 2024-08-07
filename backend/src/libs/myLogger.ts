@@ -9,7 +9,7 @@ const logDirectory = path.join(process.cwd(), 'src/storage/log');
 
 const logLayout = {
   type: 'pattern',
-  pattern: '%[%p%] %d [%c] %f:%l %x{singleLine}',
+  pattern: '[%[%p%]] %d [%c] %f:%l %[:%] %x{singleLine}',
   tokens: {
     singleLine: function (logEvent: { data: Array<unknown> }) {
       return logEvent.data
@@ -51,9 +51,12 @@ log4js.configure({
       numBackups: 7,
       compress: true,
     },
-    // application: {
-    //   type:
-    // }
+    slack: {
+      type: '@log4js-node/slack',
+      token: config.logger.slack_token,
+      channel_id: config.logger.test_channel,
+      username: 'App通知',
+    },
   },
   categories: {
     default: {
@@ -71,9 +74,16 @@ log4js.configure({
       level: 'all',
       enableCallStack: true,
     },
+    fatal: {
+      appenders: ['console', 'slack'],
+      level: 'all',
+      enableCallStack: true,
+    },
   },
 });
 
 export const logger = config.app.is_local
   ? log4js.getLogger('dev')
   : log4js.getLogger('prod');
+
+export const fatalLogger = log4js.getLogger('fatal');
