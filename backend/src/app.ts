@@ -1,8 +1,7 @@
 import express, { urlencoded, json } from 'express';
 
-import { AddTimestamp } from './http/middlewares/time';
-
 import { RequestLogger } from '@/http/middlewares/logger';
+import { AddTimestamp } from '@/http/middlewares/time';
 import { RegisterRoutes } from '@/routes/routes';
 import { RegisterSpecRoutes } from '@/routes/spec';
 
@@ -15,11 +14,14 @@ app.use(
 );
 app.use(json());
 
-// TODO add middleware (show req, res timestamp)
+// TODO gzip setting
+// TODO add useful logger
 // TODO add database
 // TODO add prisma setting
-// TODO gzip setting
-// TODO hogehoge.....
+// TODO request class
+// TODO save
+// TODO validation
+// TODO jwt auth
 // TODO
 // TODO
 // TODO

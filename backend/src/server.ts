@@ -1,14 +1,9 @@
-import dotenv from 'dotenv';
-
 import { app } from '@/app';
-
-dotenv.config();
-
-const port = process.env.PORT || 3000;
+import { config } from '@/config/config';
 
 app
-  .listen(port, () => {
-    console.log(`Server running at POST: ${port}`);
+  .listen(config.app.port, () => {
+    console.log(`Server running at POST: ${config.app.port}`);
   })
   .on('error', (error) => {
     throw new Error(error.message);
