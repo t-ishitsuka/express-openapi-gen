@@ -1,32 +1,39 @@
+import compression from 'compression';
 import express, { urlencoded, json } from 'express';
-import { RegisterRoutes } from "@/routes/routes";
+
+import { RequestLogger } from '@/http/middlewares/logger';
+import { AddTimestamp } from '@/http/middlewares/time';
+import { RegisterRoutes } from '@/routes/routes';
+import { RegisterSpecRoutes } from '@/routes/spec';
 
 export const app = express();
 
 app.use(
   urlencoded({
     extended: true,
-  })
+  }),
 );
 app.use(json());
 
-// TODO generate openapi yaml file
-// TODO generate openapi viewer html file
-// TODO add viewer openapi routing
-// TODO check openapi spec
-// TODO add response class
-// TODO add middleware (show req, res timestamp)
 // TODO add database
 // TODO add prisma setting
-// TODO gzip setting
-// TODO hogehoge.....
-// TODO 
-// TODO 
-// TODO 
-// TODO 
-// TODO 
-// TODO 
-// TODO 
-// TODO 
+// TODO request class
+// TODO save
+// TODO validation
+// TODO jwt auth
+// TODO
+// TODO
+// TODO
+// TODO
+// TODO
+// TODO
+// TODO
+// TODO
 
+app.use(compression());
+
+app.use(RequestLogger);
+app.use(AddTimestamp);
+
+RegisterSpecRoutes(app);
 RegisterRoutes(app);

@@ -12,6 +12,32 @@ services:
     networks:
       - express-openapi-network
 
+  mysql:
+    container_name: express-openapi-mysql
+    build:
+      dockerfile: ./docker/mysql/Dockerfile
+      context: .
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker/mysql/sql-data:/var/lib/mysql
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "user",
+          "-ppassword",
+        ]
+      timeout: 20s
+      retries: 10
+    networks:
+      - express-openapi-network
+
 networks:
   express-openapi-network:
     external: true
