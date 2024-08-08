@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@log4js-node/slack": "^1.0.0",
+    "compression": "^1.7.4",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "log4js": "^6.9.1",
@@ -23,6 +24,7 @@
     "yaml": "^2.5.0"
   },
   "devDependencies": {
+    "@types/compression": "^1.7.5",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/log4js": "^2.3.5",

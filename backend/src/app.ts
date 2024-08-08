@@ -1,3 +1,4 @@
+import compression from 'compression';
 import express, { urlencoded, json } from 'express';
 
 import { RequestLogger } from '@/http/middlewares/logger';
@@ -14,8 +15,6 @@ app.use(
 );
 app.use(json());
 
-// TODO gzip setting
-// TODO add useful logger
 // TODO add database
 // TODO add prisma setting
 // TODO request class
@@ -30,6 +29,8 @@ app.use(json());
 // TODO
 // TODO
 // TODO
+
+app.use(compression());
 
 app.use(RequestLogger);
 app.use(AddTimestamp);
