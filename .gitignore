@@ -1,3 +1,5 @@
+/docker/mysql/sql-data
+
 /backend/.env
 /backend/dist
 /backend/node_modules
