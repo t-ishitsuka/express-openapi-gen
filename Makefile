@@ -51,8 +51,12 @@ down:		## Docker コンテナの削除
 ############################################################
 
 .PHONY: backend
-backend:	## frontend コンテナへの接続
+backend:	## backend コンテナへの接続
 	docker compose exec -u 1000 express-openapi-backend bash
+
+.PHONY: mysql
+mysql:	## mysql コンテナへの接続
+	docker compose exec express-openapi-mysql bash -c 'mysql -u eo_db_user -peo_db_user_password eo_db_local'
 
 ############################################################
 #

@@ -16,10 +16,12 @@
   "license": "ISC",
   "dependencies": {
     "@log4js-node/slack": "^1.0.0",
+    "@prisma/client": "^5.18.0",
     "compression": "^1.7.4",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "log4js": "^6.9.1",
+    "prisma": "^5.18.0",
     "tsoa": "^6.4.0",
     "yaml": "^2.5.0"
   },

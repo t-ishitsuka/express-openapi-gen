@@ -12,7 +12,7 @@ services:
     networks:
       - express-openapi-network
 
-  mysql:
+  express-openapi-mysql:
     container_name: express-openapi-mysql
     build:
       dockerfile: ./docker/mysql/Dockerfile

@@ -15,8 +15,6 @@ app.use(
 );
 app.use(json());
 
-// TODO add database
-// TODO add prisma setting
 // TODO request class
 // TODO save
 // TODO validation
