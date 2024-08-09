@@ -1,10 +1,11 @@
 import compression from 'compression';
-import express, { urlencoded, json } from 'express';
+import express, { json, urlencoded } from 'express';
+
+import { RegisterSpecRoutes } from './routes/spec';
 
 import { RequestLogger } from '@/http/middlewares/logger';
 import { AddTimestamp } from '@/http/middlewares/time';
 import { RegisterRoutes } from '@/routes/routes';
-import { RegisterSpecRoutes } from '@/routes/spec';
 
 export const app = express();
 
@@ -35,3 +36,14 @@ app.use(AddTimestamp);
 
 RegisterSpecRoutes(app);
 RegisterRoutes(app);
+
+app.get('/test', function (req, res) {
+  res.json({
+    route: express
+      .Router()
+      .stack.filter((r) => r.route)
+      .map((r) => {
+        return { path: r.route!.path };
+      }),
+  });
+});

@@ -8,11 +8,11 @@ import { OPENAPI_TAGS } from '@/openapi/tags';
 export const specOptions: ExtendedSpecConfig = {
   entryFile: join(__dirname, '../../src/server.ts'),
   noImplicitAdditionalProperties: 'throw-on-extras',
-  basePath: join(__dirname, '../../src'),
+  basePath: 'api/v1',
   specVersion: 3,
   outputDirectory: join(__dirname, '../../src/openapi/build'),
   controllerPathGlobs: [
-    join(__dirname, '../../src/http/controllers/api/**/*Controller.ts'),
+    join(__dirname, '../../src/http/controllers/**/**/*Controller.ts'),
   ],
   specFileBaseName: 'openapi',
   tags: OPENAPI_TAGS,
@@ -31,11 +31,11 @@ export const specOptions: ExtendedSpecConfig = {
 export const routeOptions: ExtendedRoutesConfig = {
   entryFile: join(__dirname, '../../src/server.ts'),
   noImplicitAdditionalProperties: 'throw-on-extras',
-  basePath: '/api/v1',
+  basePath: 'api/v1',
   routesDir: join(__dirname, '../../src/routes'),
   bodyCoercion: true,
   controllerPathGlobs: [
-    join(__dirname, '../../src/http/controllers/api/**/*Controller.ts'),
+    join(__dirname, '../../src/http/controllers/**/**/*Controller.ts'),
   ],
 };
 
