@@ -5,7 +5,7 @@ export const ADMIN_ROLES_TAG_NAME = 'AdminRoles';
 
 export const ADMIN_ROLES_TAG: Swagger.Tag = {
   name: ADMIN_ROLES_TAG_NAME,
-  description: '管理画面ユーザー',
+  description: '管理画面ユーザーロール',
 };
 
 // Api
