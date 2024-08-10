@@ -1,5 +1,5 @@
 /**
- * The Global OK Response
+ * 共通OKレスポンス
  */
 export interface OkResponseSchema {
   /**

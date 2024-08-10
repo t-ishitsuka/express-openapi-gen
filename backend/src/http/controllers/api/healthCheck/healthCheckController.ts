@@ -27,9 +27,8 @@ export class healthCheckController extends Controller {
   @OperationId(HEALTH_CHECK_OPERATION)
   @Tags(HEALTH_CHECK_TAG_NAME)
   public async healthCheck(
-    @Res() ok: TsoaResponse<200, OkResponseSchema>,
+    @Res() res: TsoaResponse<200, OkResponseSchema>,
   ): Promise<OkResponseSchema> {
-    // todo response description
-    return ok(200, new OkResponse().toJson());
+    return res(200, new OkResponse().toJson());
   }
 }

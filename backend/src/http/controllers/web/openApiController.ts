@@ -20,7 +20,7 @@ export class OpenAPIController {
     const path = join(this.path, 'openapi.html');
 
     if (!fs.existsSync(path)) {
-      // throw new NotFoundException(ErrorCode.NOT_FOUND);
+      return res.end();
     }
 
     return res
@@ -35,7 +35,7 @@ export class OpenAPIController {
     const path = join(this.path, 'openapi.yaml');
 
     if (!fs.existsSync(path)) {
-      // throw new NotFoundException(ErrorCode.NOT_FOUND);
+      return res.end();
     }
 
     return res
@@ -49,10 +49,8 @@ export class OpenAPIController {
   async json(_req: Request, res: Response): Promise<Response> {
     const path = join(this.path, 'openapi.json');
 
-    console.log(path);
-
     if (!fs.existsSync(path)) {
-      // throw new NotFoundException(ErrorCode.NOT_FOUND);
+      return res.end();
     }
 
     return res
