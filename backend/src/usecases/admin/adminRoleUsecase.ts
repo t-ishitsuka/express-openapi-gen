@@ -11,6 +11,6 @@ export class adminRoleUsecase {
 
   public async test() {
     console.log('test1');
-    await this._adminRoleRepository.test2();
+    await this._adminRoleRepository.create();
   }
 }
