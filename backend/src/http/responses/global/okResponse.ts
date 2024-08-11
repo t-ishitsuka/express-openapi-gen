@@ -1,13 +1,11 @@
 /**
- * The Global OK Response
- *
- * @example {
- *  "status": "ok"
- * }
+ * 共通OKレスポンス
  */
 export interface OkResponseSchema {
   /**
    * アプリケーションステータス
+   *
+   * @example "ok"
    */
   status: string;
 }

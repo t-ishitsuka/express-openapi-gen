@@ -1,10 +1,11 @@
 import compression from 'compression';
-import express, { urlencoded, json } from 'express';
+import express, { json, urlencoded } from 'express';
+
+import { RegisterSpecRoutes } from './routes/spec';
 
 import { RequestLogger } from '@/http/middlewares/logger';
 import { AddTimestamp } from '@/http/middlewares/time';
 import { RegisterRoutes } from '@/routes/routes';
-import { RegisterSpecRoutes } from '@/routes/spec';
 
 export const app = express();
 
@@ -15,8 +16,6 @@ app.use(
 );
 app.use(json());
 
-// TODO add database
-// TODO add prisma setting
 // TODO request class
 // TODO save
 // TODO validation
