@@ -36,14 +36,3 @@ app.use(AddTimestamp);
 
 RegisterSpecRoutes(app);
 RegisterRoutes(app);
-
-app.get('/test', function (req, res) {
-  res.json({
-    route: express
-      .Router()
-      .stack.filter((r) => r.route)
-      .map((r) => {
-        return { path: r.route!.path };
-      }),
-  });
-});

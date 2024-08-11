@@ -37,6 +37,7 @@ export const routeOptions: ExtendedRoutesConfig = {
   controllerPathGlobs: [
     join(__dirname, '../../src/http/controllers/**/**/*Controller.ts'),
   ],
+  iocModule: join(__dirname, '../../src/libs/iocContainer.ts'),
 };
 
 export const compilerOptions: CompilerOptions = {

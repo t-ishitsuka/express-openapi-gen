@@ -22,7 +22,9 @@
     "express": "^4.19.2",
     "log4js": "^6.9.1",
     "prisma": "^5.18.0",
+    "reflect-metadata": "^0.2.2",
     "tsoa": "^6.4.0",
+    "tsyringe": "^4.8.0",
     "yaml": "^2.5.0"
   },
   "devDependencies": {
